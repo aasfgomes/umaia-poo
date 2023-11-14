@@ -8,8 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-
-
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -28,18 +26,18 @@ public class TreeTest {
     @Test
     public void testTreeCreation() {
         assertEquals(tree.plantedAt, date);
-        assertEquals(tree.locationLatitude, "41.177772696363114");
-        assertEquals(tree.locationLongitude, "-8.59843522310257");
-        assertEquals(tree.locationName, "FEUP");
+        assertEquals(tree.local.locationLatitude, "41.177772696363114");
+        assertEquals(tree.local.locationLongitude, "-8.59843522310257");
+        assertEquals(tree.local.locationName, "FEUP");
     }
 
     @Test
     public void testTreeSetLocation() {
         tree.setLocation("loclat", "loclon", "locname");
         assertEquals(tree.plantedAt, date);
-        assertEquals(tree.locationLatitude, "loclat");
-        assertEquals(tree.locationLongitude, "loclon");
-        assertEquals(tree.locationName, "locname");
+        assertEquals(tree.local.locationLatitude, "loclat");
+        assertEquals(tree.local.locationLongitude, "loclon");
+        assertEquals(tree.local.locationName, "locname");
     }
 
     @Test
